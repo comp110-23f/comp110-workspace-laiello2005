@@ -1,4 +1,4 @@
-"""Chardle 9/10/23."""
+"""Chardle: a start to solving wordle!"""
 
 __author__ = "730655689"
 
