@@ -2,17 +2,17 @@
 
 __author__ = "730655689"
 
-#emojis
+# emojis
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-emoj: str=""
+emoj: str = ""
 
-#secret
-sec:str = "python"
+# secret
+sec: str = "python"
 
-#loops to check if the guess is the right length and makes you re-submit a guess until it is the right length
-check:int = 0
+# loops to check if the guess is the right length and makes you re-submit a guess until it is the right length
+check: int = 0
 guess: str = input("What is your 6-letter guess?")
 if (len(guess) == 6):
     check = 1
@@ -23,25 +23,30 @@ while (check == 0):
         check = 1
 
 
-#"ind" is used to index through the guess
+# "ind" is used to index through the guess
 ind: int = 0
 while (ind < len(sec)):
-    #"yel" is used to index through the secret and "yel_bool" is a boolean to see if the letter that "ind" is on in the guess is present anywhere in the secret
-    yel:int = 0
-    yel_bool:bool = False
+    # "yel" is used to index through the secret and "yel_bool" is a boolean to see if the letter that "ind" is on in the guess is present anywhere in the secret
+    yel: int = 0
+    yel_bool: bool = False
     while (yel < len(sec)):
         if (guess[ind] == sec[yel]):
             yel_bool = True
         yel += 1
         
-    #if statements to see if the letter in the guess is green, yellow or white
+    # if statements to see if the letter in the guess is green, yellow or white
     if (guess[ind] == sec[ind]):
         emoj += GREEN_BOX
-    elif (yel_bool == True):
+    elif (yel_bool):
         emoj += YELLOW_BOX
     else:
         emoj += WHITE_BOX
     ind += 1
 
-#prints final string
+# prints final string
 print(emoj)
+# message if the guess is correct or not
+if (guess == sec):
+    print("Woo! You got it!")
+else:
+    print("Not quite. Play again soon!")
